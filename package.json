@@ -1,0 +1,18 @@
+{
+  "name": "habanatrans_bot",
+  "version": "1.0.0",
+  "description": "A bot to experiments learning about telegram bots made with js",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon HabanaTrans_bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "bravoy93",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^3.38.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
