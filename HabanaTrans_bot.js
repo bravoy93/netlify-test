@@ -1,15 +1,24 @@
+// import {commandsList} from "./src/commands";
+
+const commandsList = [
+  {command: 'terminales', description: 'Listado de terminales'},
+  {command: 'rutas', description: 'Listado de rutas'},
+]
 const Telegraf = require('telegraf');
 
 const habanaTrans_bot = new Telegraf('1328704286:AAERXRqYWA1AaZ6OxGMf8a_j_qFV8j9URu8');
 
+
 /* Comandos por defecto */
 habanaTrans_bot.start((ctx) => {
-  console.log(ctx)
-  ctx.reply(`Hola amig@ ${ctx.from.first_name}! \n\n
-  Mi función es ayudarle brindándole toda la información a mi alcance sobre el transporte público en nuestra ciudad habanera. 
-  Para ello use los comandos de que dispongo para ese empeño. 😊`);
-  ctx.reply(`Comandos disponibles:`);
-  ctx.telegram.getMyCommands();
+  // console.log(ctx)
+  ctx.reply(`Hola estimado(a) ${ctx.from.first_name}!\n\n\rMi función es ayudarle brindándole toda la información a mi alcance sobre el transporte público en nuestra ciudad habanera. Para ello use los comandos de que dispongo para ese empeño. 😊`);
+  let cmdListMsg = 'Comandos disponibles:';
+  let i = 0;
+  while (i++ < commandsList.length) {
+    cmdListMsg += `\n/${commandsList[i - 1].command} - ${commandsList[i - 1].description}`;
+  }
+  ctx.reply(cmdListMsg);
 });
 
 /* Comandos personalizados */
